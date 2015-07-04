@@ -2,7 +2,7 @@
 /**
  * Module definition and dependencies
  */
-angular.module('Utility.Convert.String.Service', [])
+angular.module('Utility.Convert.StringConverter.Service', [])
 
 /**
  * Factory definition
