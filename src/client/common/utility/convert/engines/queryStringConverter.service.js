@@ -35,6 +35,19 @@ angular.module('Utility.Convert.QueryStringConverter.Service', [
   }
 
   /**
+   * Converts a string to a specific case
+   */
+  function convertToCase(str, convertCase) {
+    switch (convertCase) {
+      case 'snake':
+        return StringConverter.toSnakeCase(str);
+      case 'camel':
+        return StringConverter.toCamelCase(str);
+    }
+    return str;
+  }
+
+  /**
    * Query string conversions
    */
   var QueryStringConverter = {
@@ -44,37 +57,34 @@ angular.module('Utility.Convert.QueryStringConverter.Service', [
      */
     toObject: function(s, convertCase) {
       var obj = {};
-      var kv, key;
+      var kv, key, val;
       angular.forEach((s || '').split('&'), function(s) {
-        if (s) {
-          kv = s.replace(/\+/g, '%20').split('=');
-          key = tryDecodeURIComponent(kv[0]);
-          if (angular.isDefined(key)) {
+        if (!s) {
+          return;
+        }
 
-            //Convert case?
-            switch (convertCase) {
-              case 'snake':
-                key = StringConverter.toSnakeCase(key);
-                break;
-              case 'camel':
-                key = StringConverter.toCamelCase(key);
-                break;
-            }
+        //Split key/value and decode key
+        kv = s.replace(/\+/g, '%20').split('=');
+        key = tryDecodeURIComponent(kv[0]);
 
-            //Get value
-            var val = angular.isDefined(kv[1]) ? tryDecodeURIComponent(kv[1]) : true;
+        //If not defined, exit
+        if (!angular.isDefined(key)) {
+          return;
+        }
 
-            //Set property
-            if (!hasOwnProperty.call(obj, key)) {
-              obj[key] = val;
-            }
-            else if (angular.isArray(obj[key])) {
-              obj[key].push(val);
-            }
-            else {
-              obj[key] = [obj[key], val];
-            }
-          }
+        //Convert case and get value
+        key = convertToCase(key, convertToCase);
+        val = angular.isDefined(kv[1]) ? tryDecodeURIComponent(kv[1]) : true;
+
+        //Set property
+        if (!hasOwnProperty.call(obj, key)) {
+          obj[key] = val;
+        }
+        else if (angular.isArray(obj[key])) {
+          obj[key].push(val);
+        }
+        else {
+          obj[key] = [obj[key], val];
         }
       });
       return obj;
