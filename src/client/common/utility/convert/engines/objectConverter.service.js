@@ -18,12 +18,12 @@ angular.module('Utility.Convert.ObjectConverter.Service', [
 
     //Must have object
     if (!angular.isObject(obj)) {
-      throw 'Not an object';
+      throw new TypeError('Not an object');
     }
 
     //Validate case
     if (typeof StringConverter[converter] === 'undefined') {
-      throw 'Invalid converter: ' + converter;
+      throw new Error('Invalid converter: ' + converter);
     }
 
     //Initialize object

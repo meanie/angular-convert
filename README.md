@@ -15,7 +15,28 @@ meanie install angular-convert
 ```
 
 ## Usage
-...
+Include the service as a dependency:
+```js
+angular.module('App.YourModule', [
+  'Utility.Convert.Service'
+]);
+```
+Use it in your modules:
+```js
+//Convert strings
+var str = Convert.string.toCamelCase('snake_case'); //snakeCase
+var str = Convert.string.toSnakeCase('camelCase'); //camel_case
+var str = Convert.string.toDasherized('snake_and_camelCase'); //snake-and-camel-case
+var str = Convert.string.toUcfirst('lowercase'); //Lowercase
+
+//Convert object keys
+var obj = Convert.object.keysToCamelCase({snake_case: 1}); //{snakeCase: 1}
+var obj = Convert.object.keysToSnakeCase({camelCase: 1}); //{camel_case: 1}
+
+//Convert query strings
+var str = Convert.queryString.fromObject({a: 1, b: 2}); //a=1&b=2
+var obj = Convert.queryString.toObject('a=1&b=2'); //{a: 1, b: 2}
+```
 
 ## Issues & feature requests
 Please report any bugs, issues, suggestions and feature requests in the appropriate issue tracker:
