@@ -73,7 +73,7 @@ angular.module('Utility.Convert.QueryStringConverter.Service', [
         }
 
         //Convert case and get value
-        key = convertToCase(key, convertToCase);
+        key = convertToCase(key, convertCase);
         val = angular.isDefined(kv[1]) ? tryDecodeURIComponent(kv[1]) : true;
 
         //Set property
