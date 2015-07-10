@@ -11,10 +11,10 @@ angular.module('Utility.Convert.Service', [
 /**
  * Factory definition
  */
-.factory('Convert', function(StringConverter, ObjectConverter, QueryStringConverter) {
+.factory('$convert', function($stringConverter, $objectConverter, $queryStringConverter) {
   return {
-    string: StringConverter,
-    object: ObjectConverter,
-    queryString: QueryStringConverter
+    string: $stringConverter,
+    object: $objectConverter,
+    queryString: $queryStringConverter
   };
 });

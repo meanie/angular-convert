@@ -9,8 +9,8 @@ describe('StringConvert', function() {
 
   //Inject storage
   var Convert;
-  beforeEach(inject(function(_StringConverter_) {
-    Convert = _StringConverter_;
+  beforeEach(inject(function(_$stringConverter_) {
+    Convert = _$stringConverter_;
   }));
 
   /**

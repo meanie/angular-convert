@@ -10,8 +10,8 @@ describe('ObjectConverter', function() {
 
   //Inject storage
   var Convert;
-  beforeEach(inject(function(_ObjectConverter_) {
-    Convert = _ObjectConverter_;
+  beforeEach(inject(function(_$objectConverter_) {
+    Convert = _$objectConverter_;
   }));
 
   /**

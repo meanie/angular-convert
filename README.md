@@ -15,27 +15,29 @@ meanie install angular-convert
 ```
 
 ## Usage
-Include the service as a dependency:
+Include the service as a dependency and inject it into your modules:
 ```js
 angular.module('App.YourModule', [
   'Utility.Convert.Service'
-]);
+]).controller(function($convert) {
+
+})
 ```
 Use it in your modules:
 ```js
 //Convert strings
-var str = Convert.string.toCamelCase('snake_case'); //snakeCase
-var str = Convert.string.toSnakeCase('camelCase'); //camel_case
-var str = Convert.string.toDasherized('snake_and_camelCase'); //snake-and-camel-case
-var str = Convert.string.toUcfirst('lowercase'); //Lowercase
+var str = $convert.string.toCamelCase('snake_case'); //snakeCase
+var str = $convert.string.toSnakeCase('camelCase'); //camel_case
+var str = $convert.string.toDasherized('snake_and_camelCase'); //snake-and-camel-case
+var str = $convert.string.toUcfirst('lowercase'); //Lowercase
 
 //Convert object keys
-var obj = Convert.object.keysToCamelCase({snake_case: 1}); //{snakeCase: 1}
-var obj = Convert.object.keysToSnakeCase({camelCase: 1}); //{camel_case: 1}
+var obj = $convert.object.keysToCamelCase({snake_case: 1}); //{snakeCase: 1}
+var obj = $convert.object.keysToSnakeCase({camelCase: 1}); //{camel_case: 1}
 
 //Convert query strings
-var str = Convert.queryString.fromObject({a: 1, b: 2}); //a=1&b=2
-var obj = Convert.queryString.toObject('a=1&b=2'); //{a: 1, b: 2}
+var str = $convert.queryString.fromObject({a: 1, b: 2}); //a=1&b=2
+var obj = $convert.queryString.toObject('a=1&b=2'); //{a: 1, b: 2}
 ```
 
 ## Issues & feature requests

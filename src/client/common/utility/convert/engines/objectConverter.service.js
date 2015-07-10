@@ -9,7 +9,7 @@ angular.module('Utility.Convert.ObjectConverter.Service', [
 /**
  * Factory definition
  */
-.factory('ObjectConverter', function(StringConverter) {
+.factory('$objectConverter', function($stringConverter) {
 
   /**
    * Helper to convert object keys using a specified string converter
@@ -22,7 +22,7 @@ angular.module('Utility.Convert.ObjectConverter.Service', [
     }
 
     //Validate case
-    if (typeof StringConverter[converter] === 'undefined') {
+    if (typeof $stringConverter[converter] === 'undefined') {
       throw new Error('Invalid converter: ' + converter);
     }
 
@@ -32,7 +32,7 @@ angular.module('Utility.Convert.ObjectConverter.Service', [
     //Loop keys
     for (var key in obj) {
       if (obj.hasOwnProperty(key)) {
-        var newKey = StringConverter[converter](key);
+        var newKey = $stringConverter[converter](key);
         newObj[newKey] = angular.copy(obj[key]);
       }
     }
@@ -42,9 +42,9 @@ angular.module('Utility.Convert.ObjectConverter.Service', [
   }
 
   /**
-   * Service object
+   * Object converter
    */
-  var ObjectConverter = {
+  return {
 
     /**
      * Convert object keys to snake case
@@ -60,7 +60,4 @@ angular.module('Utility.Convert.ObjectConverter.Service', [
       return convertObjectKeys(obj, 'toCamelCase');
     }
   };
-
-  //Return
-  return ObjectConverter;
 });

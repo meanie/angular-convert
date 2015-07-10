@@ -9,7 +9,7 @@ angular.module('Utility.Convert.QueryStringConverter.Service', [
 /**
  * Factory definition
  */
-.factory('QueryStringConverter', function(StringConverter) {
+.factory('$queryStringConverter', function($stringConverter) {
 
   /**
    * Tries to decode an URI component without throwing an exception
@@ -25,12 +25,12 @@ angular.module('Utility.Convert.QueryStringConverter.Service', [
    */
   function tryEncodeURIComponent(str, pctEncodeSpaces) {
     try {
-      return encodeURIComponent(str).
-        replace(/%40/g, '@').
-        replace(/%3A/g, ':').
-        replace(/%24/g, '$').
-        replace(/%2C/g, ',').
-        replace(/%20/g, (pctEncodeSpaces ? '%20' : '+'));
+      return encodeURIComponent(str)
+        .replace(/%40/g, '@')
+        .replace(/%3A/gi, ':')
+        .replace(/%24/g, '$')
+        .replace(/%2C/gi, ',')
+        .replace(/%20/g, (pctEncodeSpaces ? '%20' : '+'));
     } catch (e) {}
   }
 
@@ -40,17 +40,17 @@ angular.module('Utility.Convert.QueryStringConverter.Service', [
   function convertToCase(str, convertCase) {
     switch (convertCase) {
       case 'snake':
-        return StringConverter.toSnakeCase(str);
+        return $stringConverter.toSnakeCase(str);
       case 'camel':
-        return StringConverter.toCamelCase(str);
+        return $stringConverter.toCamelCase(str);
     }
     return str;
   }
 
   /**
-   * Query string conversions
+   * Query string converter
    */
-  var QueryStringConverter = {
+  return {
 
     /**
      * Parses an escaped url query string into key-value pairs
@@ -132,10 +132,10 @@ angular.module('Utility.Convert.QueryStringConverter.Service', [
           //Convert case?
           switch (convertCase) {
             case 'snake':
-              key = StringConverter.toSnakeCase(key);
+              key = $stringConverter.toSnakeCase(key);
               break;
             case 'camel':
-              key = StringConverter.toCamelCase(key);
+              key = $stringConverter.toCamelCase(key);
               break;
           }
 
@@ -153,7 +153,4 @@ angular.module('Utility.Convert.QueryStringConverter.Service', [
       return '';
     }
   };
-
-  //Return
-  return QueryStringConverter;
 });

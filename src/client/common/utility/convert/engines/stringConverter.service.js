@@ -7,12 +7,8 @@ angular.module('Utility.Convert.StringConverter.Service', [])
 /**
  * Factory definition
  */
-.factory('StringConverter', function($window) {
-
-  /**
-   * Service object
-   */
-  var StringConverter = {
+.factory('$stringConverter', function($window) {
+  return {
 
     /**
      * Convert string to snake case
@@ -112,7 +108,4 @@ angular.module('Utility.Convert.StringConverter.Service', [])
       catch (e) {}
     }
   };
-
-  //Return
-  return StringConverter;
 });
