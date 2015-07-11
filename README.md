@@ -17,10 +17,10 @@ meanie install angular-convert
 ## Usage
 Include the service as a dependency and inject it into your modules:
 ```js
-angular.module('App.YourModule', [
+angular.module('App.MyModule', [
   'Utility.Convert.Service'
-]).controller(function($convert) {
-
+]).controller('MyController', function($convert) {
+  //Use the $convert service
 })
 ```
 Use it in your modules:
