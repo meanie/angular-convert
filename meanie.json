@@ -1,6 +1,5 @@
 {
-  "cliVersion": "0.4.4",
-  "instructions": "https://github.com/meanie/angular-convert#usage",
-  "postInstall": "",
-  "dependencies": {}
+  "cliVersion": "0.5.0",
+  "destination": "client/common/utility/convert",
+  "instructions": "https://github.com/meanie/angular-convert#usage"
 }
