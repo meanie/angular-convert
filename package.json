@@ -1,7 +1,7 @@
 {
   "name": "meanie-angular-convert",
-  "description": "An Angular service for Meanie projects to convert strings, objects and query strings.",
-  "version": "0.3.1",
+  "description": "An Angular service to convert strings, objects and query strings",
+  "version": "0.3.2",
   "homepage": "https://github.com/meanie/",
   "author": {
     "name": "Adam Buczynski",
@@ -24,6 +24,9 @@
     "string",
     "object",
     "query string"
+  ],
+  "main": [
+    "src/url.service.js"
   ],
   "files": [
     "src",
