@@ -219,7 +219,7 @@ function commitBump() {
 /**
  * Tag latest commit with current version
  */
-function tag(cb) {
+function tagBump(cb) {
   var version = packageJson().version;
   git.tag(version, 'Tag version ' + version, function(error) {
     if (error) {
@@ -248,19 +248,19 @@ gulp.task('release', gulp.series(
 gulp.task('test', test);
 gulp.task('lint', lint);
 gulp.task('watch', watch);
-gulp.task('tag', tag);
+gulp.task('tag', tagBump);
 
 /**
  * Bump version numbers
  */
 gulp.task('patch', gulp.series(
-  patchBump, commitBump, tag
+  patchBump, commitBump, tagBump
 ));
 gulp.task('minor', gulp.series(
-  minorBump, commitBump, tag
+  minorBump, commitBump, tagBump
 ));
 gulp.task('major', gulp.series(
-  majorBump, commitBump, tag
+  majorBump, commitBump, tagBump
 ));
 
 /**
