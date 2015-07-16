@@ -1,0 +1,15 @@
+{
+  "name": "meanie-angular-convert",
+  "version": "0.4.0",
+  "main": "./release/meanie-angular-convert.js",
+  "ignore": [
+    "**/.*",
+    "gulpfile.js",
+    "karma.conf.js",
+    "src",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.4.3"
+  }
+}
