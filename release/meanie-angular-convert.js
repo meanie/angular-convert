@@ -1,5 +1,5 @@
 /**
- * meanie-angular-convert - v0.4.0 - 16-6-2015
+ * meanie-angular-convert - v0.4.1 - 17-6-2015
  * https://github.com/meanie/angular-convert
  *
  * Copyright (c) 2015 Adam Buczynski <me@adambuczynski.com>
@@ -19,7 +19,7 @@ angular.module('Utility.Convert.Service', [
 /**
  * Factory definition
  */
-.factory('$convert', ["$stringConverter", "$objectConverter", "$queryStringConverter", function($stringConverter, $objectConverter, $queryStringConverter) {
+.factory('$convert', ['$stringConverter', '$objectConverter', '$queryStringConverter', function($stringConverter, $objectConverter, $queryStringConverter) {
   return {
     string: $stringConverter,
     object: $objectConverter,
@@ -41,7 +41,7 @@ angular.module('Utility.Convert.ObjectConverter.Service', [
 /**
  * Factory definition
  */
-.factory('$objectConverter', ["$stringConverter", function($stringConverter) {
+.factory('$objectConverter', ['$stringConverter', function($stringConverter) {
 
   /**
    * Helper to convert object keys using a specified string converter
@@ -108,7 +108,7 @@ angular.module('Utility.Convert.QueryStringConverter.Service', [
 /**
  * Factory definition
  */
-.factory('$queryStringConverter', ["$stringConverter", function($stringConverter) {
+.factory('$queryStringConverter', ['$stringConverter', function($stringConverter) {
 
   /**
    * Tries to decode an URI component without throwing an exception
@@ -266,7 +266,7 @@ angular.module('Utility.Convert.StringConverter.Service', [])
 /**
  * Factory definition
  */
-.factory('$stringConverter', ["$window", function($window) {
+.factory('$stringConverter', ['$window', function($window) {
   return {
 
     /**
