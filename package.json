@@ -1,7 +1,7 @@
 {
   "name": "meanie-angular-convert",
   "description": "AngularJS module for converting strings, objects and query strings",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "homepage": "https://github.com/meanie/angular-convert",
   "author": {
     "name": "Adam Buczynski",
