@@ -6,7 +6,7 @@
 describe('ObjectConverter', function() {
 
   //Load module and service
-  beforeEach(module('Utility.Convert.ObjectConverter.Service'));
+  beforeEach(module('Convert.ObjectConverter.Service'));
 
   //Inject storage
   var Convert;

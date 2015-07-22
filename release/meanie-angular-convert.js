@@ -1,5 +1,5 @@
 /**
- * meanie-angular-convert - v0.4.1 - 17-6-2015
+ * meanie-angular-convert - v0.4.4 - 23-6-2015
  * https://github.com/meanie/angular-convert
  *
  * Copyright (c) 2015 Adam Buczynski <me@adambuczynski.com>
@@ -10,10 +10,10 @@
 /**
  * Module definition and dependencies
  */
-angular.module('Utility.Convert.Service', [
-  'Utility.Convert.StringConverter.Service',
-  'Utility.Convert.ObjectConverter.Service',
-  'Utility.Convert.QueryStringConverter.Service'
+angular.module('Convert.Service', [
+  'Convert.StringConverter.Service',
+  'Convert.ObjectConverter.Service',
+  'Convert.QueryStringConverter.Service'
 ])
 
 /**
@@ -34,8 +34,8 @@ angular.module('Utility.Convert.Service', [
 /**
  * Module definition and dependencies
  */
-angular.module('Utility.Convert.ObjectConverter.Service', [
-  'Utility.Convert.StringConverter.Service'
+angular.module('Convert.ObjectConverter.Service', [
+  'Convert.StringConverter.Service'
 ])
 
 /**
@@ -101,8 +101,8 @@ angular.module('Utility.Convert.ObjectConverter.Service', [
 /**
  * Module definition and dependencies
  */
-angular.module('Utility.Convert.QueryStringConverter.Service', [
-  'Utility.Convert.StringConverter.Service'
+angular.module('Convert.QueryStringConverter.Service', [
+  'Convert.StringConverter.Service'
 ])
 
 /**
@@ -261,7 +261,7 @@ angular.module('Utility.Convert.QueryStringConverter.Service', [
 /**
  * Module definition and dependencies
  */
-angular.module('Utility.Convert.StringConverter.Service', [])
+angular.module('Convert.StringConverter.Service', [])
 
 /**
  * Factory definition

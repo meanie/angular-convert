@@ -5,7 +5,7 @@
 describe('StringConvert', function() {
 
   //Load module and service
-  beforeEach(module('Utility.Convert.StringConverter.Service'));
+  beforeEach(module('Convert.StringConverter.Service'));
 
   //Inject storage
   var Convert;

@@ -2,10 +2,10 @@
 /**
  * Module definition and dependencies
  */
-angular.module('Utility.Convert.Service', [
-  'Utility.Convert.StringConverter.Service',
-  'Utility.Convert.ObjectConverter.Service',
-  'Utility.Convert.QueryStringConverter.Service'
+angular.module('Convert.Service', [
+  'Convert.StringConverter.Service',
+  'Convert.ObjectConverter.Service',
+  'Convert.QueryStringConverter.Service'
 ])
 
 /**
