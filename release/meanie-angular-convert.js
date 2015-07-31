@@ -1,11 +1,11 @@
 /**
- * meanie-angular-convert - v0.4.4 - 23-6-2015
+ * meanie-angular-convert - v0.4.7 - 31-6-2015
  * https://github.com/meanie/angular-convert
  *
  * Copyright (c) 2015 Adam Buczynski <me@adambuczynski.com>
  * License: MIT
  */
-(function (window, angular, undefined) {'use strict';
+(function(window, angular, undefined) {'use strict';
 
 /**
  * Module definition and dependencies
@@ -29,7 +29,7 @@ angular.module('Convert.Service', [
 
 })(window, window.angular);
 
-(function (window, angular, undefined) {'use strict';
+(function(window, angular, undefined) {'use strict';
 
 /**
  * Module definition and dependencies
@@ -96,7 +96,7 @@ angular.module('Convert.ObjectConverter.Service', [
 
 })(window, window.angular);
 
-(function (window, angular, undefined) {'use strict';
+(function(window, angular, undefined) {'use strict';
 
 /**
  * Module definition and dependencies
@@ -256,7 +256,7 @@ angular.module('Convert.QueryStringConverter.Service', [
 
 })(window, window.angular);
 
-(function (window, angular, undefined) {'use strict';
+(function(window, angular, undefined) {'use strict';
 
 /**
  * Module definition and dependencies
