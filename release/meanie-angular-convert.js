@@ -1,5 +1,5 @@
 /**
- * meanie-angular-convert - v0.4.7 - 31-6-2015
+ * meanie-angular-convert - v1.0.0 - 23-9-2015
  * https://github.com/meanie/angular-convert
  *
  * Copyright (c) 2015 Adam Buczynski <me@adambuczynski.com>
