@@ -2,7 +2,7 @@
 /**
  * Specifications
  */
-describe('StringConvert', function() {
+describe('StringConverter', function() {
 
   //Load module and service
   beforeEach(module('Convert.StringConverter.Service'));
@@ -251,60 +251,60 @@ describe('StringConvert', function() {
   /**
    * Ucfirst conversion
    */
-  describe('toUcfirst', function() {
+  describe('toUcFirst', function() {
 
     //Tests
     describe('capitalization', function() {
       it('should capitalize the first letter of a string', function() {
-        expect(Convert.toUcfirst('test')).toBe('Test');
-        expect(Convert.toUcfirst('test with spaces')).toBe('Test with spaces');
+        expect(Convert.toUcFirst('test')).toBe('Test');
+        expect(Convert.toUcFirst('test with spaces')).toBe('Test with spaces');
       });
       it('should capitalize single letters', function() {
-        expect(Convert.toUcfirst('a')).toBe('A');
-        expect(Convert.toUcfirst('f')).toBe('F');
-        expect(Convert.toUcfirst('z')).toBe('Z');
+        expect(Convert.toUcFirst('a')).toBe('A');
+        expect(Convert.toUcFirst('f')).toBe('F');
+        expect(Convert.toUcFirst('z')).toBe('Z');
       });
       it('should leave capitalization of the rest of the string intact', function() {
-        expect(Convert.toUcfirst('tEsT')).toBe('TEsT');
+        expect(Convert.toUcFirst('tEsT')).toBe('TEsT');
       });
       it('should trim and capitalize properly with leading and trailing spaces', function() {
-        expect(Convert.toUcfirst(' test ')).toBe('Test');
-        expect(Convert.toUcfirst('  test')).toBe('Test');
-        expect(Convert.toUcfirst('test  ')).toBe('Test');
-        expect(Convert.toUcfirst('  test  ')).toBe('Test');
+        expect(Convert.toUcFirst(' test ')).toBe('Test');
+        expect(Convert.toUcFirst('  test')).toBe('Test');
+        expect(Convert.toUcFirst('test  ')).toBe('Test');
+        expect(Convert.toUcFirst('  test  ')).toBe('Test');
       });
     });
 
     //Numbers
     describe('numbers', function() {
       it('should accept numbers and return them as a string', function() {
-        expect(Convert.toUcfirst(123)).toBe('123');
-        expect(Convert.toUcfirst(1.23)).toBe('1.23');
-        expect(Convert.toUcfirst(0)).toBe('0');
-        expect(Convert.toUcfirst(-123)).toBe('-123');
+        expect(Convert.toUcFirst(123)).toBe('123');
+        expect(Convert.toUcFirst(1.23)).toBe('1.23');
+        expect(Convert.toUcFirst(0)).toBe('0');
+        expect(Convert.toUcFirst(-123)).toBe('-123');
       });
     });
 
     //Invalid input
     describe('invalid input', function() {
       it('should return an empty string for empty strings', function() {
-        expect(Convert.toUcfirst('')).toBe('');
+        expect(Convert.toUcFirst('')).toBe('');
       });
       it('should return an empty string for booleans', function() {
-        expect(Convert.toUcfirst(true)).toBe('');
-        expect(Convert.toUcfirst(false)).toBe('');
+        expect(Convert.toUcFirst(true)).toBe('');
+        expect(Convert.toUcFirst(false)).toBe('');
       });
       it('should return an empty string for null', function() {
-        expect(Convert.toUcfirst(null)).toBe('');
+        expect(Convert.toUcFirst(null)).toBe('');
       });
       it('should return an empty string for undefined', function() {
-        expect(Convert.toUcfirst(null)).toBe('');
+        expect(Convert.toUcFirst(null)).toBe('');
       });
       it('should return an empty string for objects', function() {
-        expect(Convert.toUcfirst({})).toBe('');
+        expect(Convert.toUcFirst({})).toBe('');
       });
       it('should return an empty string for arrays', function() {
-        expect(Convert.toUcfirst([])).toBe('');
+        expect(Convert.toUcFirst([])).toBe('');
       });
     });
   });

@@ -74,7 +74,7 @@ angular.module('Convert.StringConverter.Service', [])
     /**
      * Make the first letter of a string uppercase
      */
-    toUcfirst: function(str) {
+    toUcFirst: function(str) {
       if (typeof str !== 'string' && typeof str !== 'number') {
         return '';
       }
