@@ -1,5 +1,5 @@
 /**
- * meanie-angular-convert - v1.0.1 - 4-10-2015
+ * meanie-angular-convert - v1.1.0 - 22-10-2015
  * https://github.com/meanie/angular-convert
  *
  * Copyright (c) 2015 Adam Buczynski <me@adambuczynski.com>
@@ -333,7 +333,7 @@ angular.module('Convert.StringConverter.Service', [])
     /**
      * Make the first letter of a string uppercase
      */
-    toUcfirst: function(str) {
+    toUcFirst: function(str) {
       if (typeof str !== 'string' && typeof str !== 'number') {
         return '';
       }
