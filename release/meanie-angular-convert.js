@@ -1,8 +1,8 @@
 /**
- * meanie-angular-convert - v1.1.0 - 22-10-2015
+ * meanie-angular-convert - v1.1.0 - 10-0-2016
  * https://github.com/meanie/angular-convert
  *
- * Copyright (c) 2015 Adam Buczynski <me@adambuczynski.com>
+ * Copyright (c) 2016 Adam Buczynski <me@adambuczynski.com>
  * License: MIT
  */
 (function(window, angular, undefined) {'use strict';
