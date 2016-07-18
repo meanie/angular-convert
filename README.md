@@ -12,9 +12,7 @@ An Angular service with various conversion helpers
 
 ## Installation
 
-You can install this package using `npm` or `bower`.
-
-### npm
+You can install this package using `npm`:
 
 ```shell
 npm install meanie-angular-convert --save
@@ -24,20 +22,6 @@ Include the script `node_modules/meanie-angular-convert/release/meanie-angular-c
 
 ```html
 <script src="node_modules/meanie-angular-convert/release/meanie-angular-convert.js"></script>
-```
-
-Add `Convert.Service` as a dependency for your app.
-
-### bower
-
-```shell
-bower install meanie-angular-convert
-```
-
-Include the script `bower_components/meanie-angular-convert/release/meanie-angular-convert.js` in your build process, or add it via a `<script>` tag to your `index.html`:
-
-```html
-<script src="bower_components/meanie-angular-convert/release/meanie-angular-convert.js"></script>
 ```
 
 Add `Convert.Service` as a dependency for your app.
