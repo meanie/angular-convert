@@ -1,7 +1,7 @@
 {
   "name": "meanie-angular-convert",
   "description": "An Angular service with various conversion helpers",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "homepage": "https://github.com/meanie/angular-convert",
   "author": {
     "name": "Adam Buczynski",
