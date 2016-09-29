@@ -3,7 +3,7 @@
  * Module definition and dependencies
  */
 angular.module('Convert.ObjectConverter.Service', [
-  'Convert.StringConverter.Service'
+  'Convert.StringConverter.Service',
 ])
 
 /**
@@ -27,12 +27,12 @@ angular.module('Convert.ObjectConverter.Service', [
     }
 
     //Initialize object
-    var newObj = {};
+    let newObj = {};
 
     //Loop keys
-    for (var key in obj) {
+    for (let key in obj) {
       if (obj.hasOwnProperty(key)) {
-        var newKey = $stringConverter[converter](key);
+        let newKey = $stringConverter[converter](key);
         newObj[newKey] = angular.copy(obj[key]);
       }
     }
@@ -49,15 +49,15 @@ angular.module('Convert.ObjectConverter.Service', [
     /**
      * Convert object keys to snake case
      */
-    keysToSnakeCase: function(obj) {
+    keysToSnakeCase(obj) {
       return convertObjectKeys(obj, 'toSnakeCase');
     },
 
     /**
      * Convert object keys to snake case
      */
-    keysToCamelCase: function(obj) {
+    keysToCamelCase(obj) {
       return convertObjectKeys(obj, 'toCamelCase');
-    }
+    },
   };
 });

@@ -3,7 +3,7 @@
  * Module definition and dependencies
  */
 angular.module('Convert.QueryStringConverter.Service', [
-  'Convert.StringConverter.Service'
+  'Convert.StringConverter.Service',
 ])
 
 /**
@@ -17,7 +17,10 @@ angular.module('Convert.QueryStringConverter.Service', [
   function tryDecodeURIComponent(str) {
     try {
       return decodeURIComponent(str);
-    } catch (e) {}
+    }
+    catch (e) {
+      //Fall through
+    }
   }
 
   /**
@@ -31,7 +34,10 @@ angular.module('Convert.QueryStringConverter.Service', [
         .replace(/%24/g, '$')
         .replace(/%2C/gi, ',')
         .replace(/%20/g, (pctEncodeSpaces ? '%20' : '+'));
-    } catch (e) {}
+    }
+    catch (e) {
+      //Fall through
+    }
   }
 
   /**
@@ -55,10 +61,10 @@ angular.module('Convert.QueryStringConverter.Service', [
     /**
      * Parses an escaped url query string into key-value pairs
      */
-    toObject: function(s, convertCase) {
-      var obj = {};
-      var kv, key, val;
-      angular.forEach((s || '').split('&'), function(s) {
+    toObject(s, convertCase) {
+      let obj = {};
+      let kv, key, val;
+      angular.forEach((s || '').split('&'), (s) => {
         if (!s) {
           return;
         }
@@ -93,7 +99,7 @@ angular.module('Convert.QueryStringConverter.Service', [
     /**
      * Convert key-value pairs object to a parametrized query string
      */
-    fromObject: function(obj, convertCase) {
+    fromObject(obj, convertCase) {
 
       //No obj?
       if (!obj || !angular.isObject(obj)) {
@@ -101,10 +107,10 @@ angular.module('Convert.QueryStringConverter.Service', [
       }
 
       //Initialize parts array
-      var parts = [];
+      let parts = [];
 
       //Loop the parameters
-      angular.forEach(obj, function(value, key) {
+      angular.forEach(obj, (value, key) => {
 
         //Skip null/undefined values
         if (value === null || angular.isUndefined(value)) {
@@ -117,7 +123,7 @@ angular.module('Convert.QueryStringConverter.Service', [
         }
 
         //Loop values
-        angular.forEach(value, function(v) {
+        angular.forEach(value, (v) => {
 
           //Handle objects
           if (angular.isObject(v)) {
@@ -140,7 +146,9 @@ angular.module('Convert.QueryStringConverter.Service', [
           }
 
           //Push to parts
-          parts.push(tryEncodeURIComponent(key) + '=' + tryEncodeURIComponent(v));
+          parts.push(
+            tryEncodeURIComponent(key) + '=' + tryEncodeURIComponent(v)
+          );
         });
       });
 
@@ -151,6 +159,6 @@ angular.module('Convert.QueryStringConverter.Service', [
 
       //No parts
       return '';
-    }
+    },
   };
 });

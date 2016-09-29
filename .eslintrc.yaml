@@ -13,6 +13,8 @@ env:
   jasmine: true
 globals:
   angular: false
+  inject: false
+  it: false
 rules:
   linebreak-style:
     - error
