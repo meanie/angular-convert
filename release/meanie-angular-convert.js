@@ -76,9 +76,11 @@
       /**
        * Convert object keys to snake case
        */
+
       keysToSnakeCase: function keysToSnakeCase(obj) {
         return convertObjectKeys(obj, 'toSnakeCase');
       },
+
 
       /**
        * Convert object keys to snake case
@@ -109,7 +111,9 @@
     function tryDecodeURIComponent(str) {
       try {
         return decodeURIComponent(str);
-      } catch (e) {}
+      } catch (e) {
+        //Fall through
+      }
     }
 
     /**
@@ -118,7 +122,9 @@
     function tryEncodeURIComponent(str, pctEncodeSpaces) {
       try {
         return encodeURIComponent(str).replace(/%40/g, '@').replace(/%3A/gi, ':').replace(/%24/g, '$').replace(/%2C/gi, ',').replace(/%20/g, pctEncodeSpaces ? '%20' : '+');
-      } catch (e) {}
+      } catch (e) {
+        //Fall through
+      }
     }
 
     /**
@@ -142,9 +148,12 @@
       /**
        * Parses an escaped url query string into key-value pairs
        */
+
       toObject: function toObject(s, convertCase) {
         var obj = {};
-        var kv, key, val;
+        var kv = void 0,
+            key = void 0,
+            val = void 0;
         angular.forEach((s || '').split('&'), function (s) {
           if (!s) {
             return;
@@ -174,6 +183,7 @@
         });
         return obj;
       },
+
 
       /**
        * Convert key-value pairs object to a parametrized query string
@@ -257,6 +267,7 @@
       /**
        * Convert string to snake case
        */
+
       toSnakeCase: function toSnakeCase(str) {
         if (typeof str === 'number') {
           return String(str);
@@ -272,6 +283,7 @@
         }).slice(1);
       },
 
+
       /**
        * Convert string to camel case
        */
@@ -285,12 +297,13 @@
           return '';
         }
         return str.replace(/_+|\-+/g, ' ').replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
-          if (+match === 0) {
+          if (Number(match) === 0) {
             return '';
           }
           return index === 0 && !ucfirst ? match.toLowerCase() : match.toUpperCase();
         });
       },
+
 
       /**
        * Dasherize a string
@@ -304,11 +317,13 @@
         if ((str = String(str).trim()) === '') {
           return '';
         }
+        str = str.replace(/\s\(/, '-(');
         return str.replace(/(\s*\-*\b\w|[A-Z]|_[a-z])/g, function ($1) {
           $1 = $1.replace('_', '-').trim().toLowerCase();
           return ($1[0] === '-' ? '' : '-') + $1;
-        }).slice(1);
+        }).slice(1).replace(/\(-/, '(');
       },
+
 
       /**
        * Make the first letter of a string uppercase
@@ -323,6 +338,7 @@
         }
         return str[0].toUpperCase() + str.substr(1);
       },
+
 
       /**
        * Base 64 decode URL string
@@ -343,7 +359,9 @@
         }
         try {
           return decodeURIComponent($window.atob(o));
-        } catch (e) {}
+        } catch (e) {
+          //Fall through
+        }
       }
     };
   }]);
