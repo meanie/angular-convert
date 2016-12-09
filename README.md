@@ -4,7 +4,7 @@
 [![node dependencies](https://david-dm.org/meanie/angular-convert.svg)](https://david-dm.org/meanie/angular-convert)
 [![github issues](https://img.shields.io/github/issues/meanie/angular-convert.svg)](https://github.com/meanie/angular-convert/issues)
 [![codacy](https://img.shields.io/codacy/bfb2443861974cd1a48cc49e5c350155.svg)](https://www.codacy.com/app/meanie/angular-convert)
-[![Join the chat at https://gitter.im/meanie/meanie](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg)](https://gitter.im/meanie/meanie?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 
 An Angular service with various conversion helpers
 
