@@ -1,6 +1,6 @@
-# meanie-angular-convert
+# @meanie/angular-convert
 
-[![npm version](https://img.shields.io/npm/v/meanie-angular-convert.svg)](https://www.npmjs.com/package/meanie-angular-convert)
+[![npm version](https://img.shields.io/npm/v/@meanie/angular-convert.svg)](https://www.npmjs.com/package/@meanie/angular-convert)
 [![node dependencies](https://david-dm.org/meanie/angular-convert.svg)](https://david-dm.org/meanie/angular-convert)
 [![github issues](https://img.shields.io/github/issues/meanie/angular-convert.svg)](https://github.com/meanie/angular-convert/issues)
 [![codacy](https://img.shields.io/codacy/bfb2443861974cd1a48cc49e5c350155.svg)](https://www.codacy.com/app/meanie/angular-convert)
@@ -12,16 +12,20 @@ An Angular service with various conversion helpers
 
 ## Installation
 
-You can install this package using `npm`:
+You can install this package using `yarn` or `npm`:
 
 ```shell
-npm install meanie-angular-convert --save
+#yarn
+yarn add @meanie/angular-convert
+
+#npm
+npm install @meanie/angular-convert --save
 ```
 
-Include the script `node_modules/meanie-angular-convert/release/meanie-angular-convert.js` in your build process, or add it via a `<script>` tag to your `index.html`:
+Include the script `node_modules/@meanie/angular-convert/release/angular-convert.js` in your build process, or add it via a `<script>` tag to your `index.html`:
 
 ```html
-<script src="node_modules/meanie-angular-convert/release/meanie-angular-convert.js"></script>
+<script src="node_modules/@meanie/angular-convert/release/angular-convert.js"></script>
 ```
 
 Add `Convert.Service` as a dependency for your app.
@@ -49,7 +53,7 @@ angular.module('App.MyModule').controller('MyController', function($convert) {
 
 ## Issues & feature requests
 
-Please report any bugs, issues, suggestions and feature requests in the [meanie-angular-convert issue tracker](https://github.com/meanie/angular-convert/issues).
+Please report any bugs, issues, suggestions and feature requests in the [@meanie/angular-convert issue tracker](https://github.com/meanie/angular-convert/issues).
 
 ## Contributing
 
@@ -63,4 +67,4 @@ Pull requests are welcome! If you would like to contribute to Meanie, please che
 
 (MIT License)
 
-Copyright 2015-2017, [Adam Reis](http://adam.reis.nz)
+Copyright 2015-2017, [Adam Reis](https://adam.reis.nz)

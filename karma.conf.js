@@ -8,19 +8,17 @@ module.exports = function(config) {
     //Base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
 
-    //Preprocessors
-    preprocessors: {
-      'src/**/*.js': ['babel'],
-      'tests/**/*.spec.js': ['babel'],
-    },
-
     //Files
     files: [
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'src/**/*.js',
-      'tests/**/*.spec.js',
     ],
+
+    //Preprocessors
+    preprocessors: {
+      'src/**/*.js': ['babel'],
+    },
 
     //Frameworks to use (see https://npmjs.org/browse/keyword/karma-adapter)
     frameworks: ['jasmine'],
