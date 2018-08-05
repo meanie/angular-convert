@@ -97,6 +97,73 @@ describe('StringConverter', () => {
   });
 
   /**
+   * Proper case conversion
+   */
+  describe('toProperCase', () => {
+
+    //Tests
+    describe('proper casing', () => {
+      it('should proper case lowercase names', () => {
+        expect(Convert.toProperCase('adam')).toBe('Adam');
+        expect(Convert.toProperCase('adam reis')).toBe('Adam Reis');
+      });
+      it('should proper case uppercase names', () => {
+        expect(Convert.toProperCase('ADAM')).toBe('Adam');
+        expect(Convert.toProperCase('ADAM REIS')).toBe('Adam Reis');
+      });
+      it('should proper case an already proper cased string', () => {
+        expect(Convert.toProperCase('Adam')).toBe('Adam');
+        expect(Convert.toProperCase('Adam Reis')).toBe('Adam Reis');
+      });
+      it('should proper case a dasherized string', () => {
+        expect(Convert.toProperCase('Adam-reis')).toBe('Adam-Reis');
+        expect(Convert.toProperCase('adam-reis')).toBe('Adam-Reis');
+      });
+      it('should lowercase single letters', () => {
+        expect(Convert.toProperCase('A')).toBe('A');
+        expect(Convert.toProperCase('f')).toBe('F');
+      });
+      it('should trim and proper case with leading/trailing spaces', () => {
+        expect(Convert.toProperCase(' adam reis ')).toBe('Adam Reis');
+      });
+    });
+
+    //Numbers
+    describe('numbers', () => {
+      it('should accept numbers and return them as a string', () => {
+        expect(Convert.toProperCase(123)).toBe('123');
+        expect(Convert.toProperCase(1.23)).toBe('1.23');
+        expect(Convert.toProperCase(0)).toBe('0');
+        expect(Convert.toProperCase(-123)).toBe('-123');
+        expect(Convert.toProperCase('adam 123')).toBe('Adam 123');
+      });
+    });
+
+    //Invalid input
+    describe('invalid input', () => {
+      it('should return an empty string for empty strings', () => {
+        expect(Convert.toProperCase('')).toBe('');
+      });
+      it('should return an empty string for booleans', () => {
+        expect(Convert.toProperCase(true)).toBe('');
+        expect(Convert.toProperCase(false)).toBe('');
+      });
+      it('should return an empty string for null', () => {
+        expect(Convert.toProperCase(null)).toBe('');
+      });
+      it('should return an empty string for undefined', () => {
+        expect(Convert.toProperCase(null)).toBe('');
+      });
+      it('should return an empty string for objects', () => {
+        expect(Convert.toProperCase({})).toBe('');
+      });
+      it('should return an empty string for arrays', () => {
+        expect(Convert.toProperCase([])).toBe('');
+      });
+    });
+  });
+
+  /**
    * Snake case conversion
    */
   describe('toSnakeCase', () => {

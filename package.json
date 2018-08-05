@@ -34,6 +34,7 @@
   ],
   "main": "index.js",
   "scripts": {
+    "test": "karma start karma.conf.js",
     "release": "gulp release",
     "version": "yarn release && git add release/*",
     "postversion": "git push && git push --tags && npm publish"
