@@ -1,7 +1,7 @@
 /**
  * @meanie/angular-convert * https://github.com/meanie/angular-convert
  *
- * Copyright (c) 2017 Adam Reis <adam@reis.nz>
+ * Copyright (c) 2018 Adam Reis <adam@reis.nz>
  * License: MIT
  */
 (function (window, angular, undefined) {
@@ -274,7 +274,7 @@
         if ((str = String(str).trim()) === '') {
           return '';
         }
-        return str.replace(/(\s*\-*\b\w|[A-Z])/g, function ($1) {
+        return str.replace(/(\s*-*\b\w|[A-Z])/g, function ($1) {
           $1 = $1.trim().toLowerCase().replace('-', '');
           return ($1[0] === '_' ? '' : '_') + $1;
         }).slice(1);
@@ -293,11 +293,29 @@
         if ((str = String(str).trim()) === '') {
           return '';
         }
-        return str.replace(/_+|\-+/g, ' ').replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
+        return str.replace(/_+|-+/g, ' ').replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
           if (Number(match) === 0) {
             return '';
           }
           return index === 0 && !ucfirst ? match.toLowerCase() : match.toUpperCase();
+        });
+      },
+
+
+      /**
+       * Convert string to proper case
+       */
+      toProperCase: function toProperCase(str) {
+        if (typeof str === 'number') {
+          return String(str);
+        } else if (typeof str !== 'string') {
+          return '';
+        }
+        if ((str = String(str).trim()) === '') {
+          return '';
+        }
+        return str.replace(/\w*/g, function (match) {
+          return match.charAt(0).toUpperCase() + match.substr(1).toLowerCase();
         });
       },
 
@@ -315,7 +333,7 @@
           return '';
         }
         str = str.replace(/\s\(/, '-(');
-        return str.replace(/(\s*\-*\b\w|[A-Z]|_[a-z])/g, function ($1) {
+        return str.replace(/(\s*-*\b\w|[A-Z]|_[a-z])/g, function ($1) {
           $1 = $1.replace('_', '-').trim().toLowerCase();
           return ($1[0] === '-' ? '' : '-') + $1;
         }).slice(1).replace(/\(-/, '(');
