@@ -1,7 +1,7 @@
 /**
  * @meanie/angular-convert * https://github.com/meanie/angular-convert
  *
- * Copyright (c) 2018 Adam Reis <adam@reis.nz>
+ * Copyright (c) 2019 Adam Reis <adam@reis.nz>
  * License: MIT
  */
 (function (window, angular, undefined) {
@@ -314,7 +314,7 @@
         if ((str = String(str).trim()) === '') {
           return '';
         }
-        return str.replace(/\w*/g, function (match) {
+        return str.replace(/[A-Za-z0-9_'’”‘“]*/g, function (match) {
           return match.charAt(0).toUpperCase() + match.substr(1).toLowerCase();
         });
       },
