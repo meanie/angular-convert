@@ -67,7 +67,7 @@ angular.module('Convert.StringConverter.Service', [])
         return '';
       }
       return str
-        .replace(/\w*/g, (match) => {
+        .replace(/[A-Za-z0-9_'’”‘“]*/g, (match) => {
           return match.charAt(0).toUpperCase() + match.substr(1).toLowerCase();
         });
     },

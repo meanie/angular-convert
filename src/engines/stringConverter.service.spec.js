@@ -126,6 +126,9 @@ describe('StringConverter', () => {
       it('should trim and proper case with leading/trailing spaces', () => {
         expect(Convert.toProperCase(' adam reis ')).toBe('Adam Reis');
       });
+      it('should handle special characters', () => {
+        expect(Convert.toProperCase('hawke\'s bay')).toBe('Hawke\'s Bay');
+      });
     });
 
     //Numbers
