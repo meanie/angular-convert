@@ -128,6 +128,11 @@ describe('StringConverter', () => {
       });
       it('should handle special characters', () => {
         expect(Convert.toProperCase('hawke\'s bay')).toBe('Hawke\'s Bay');
+        expect(Convert.toProperCase('HAWKE\'S BAY')).toBe('Hawke\'s Bay');
+      });
+      it('should handle special characters with capitals', () => {
+        expect(Convert.toProperCase('O\'Sullivan')).toBe('O\'Sullivan');
+        expect(Convert.toProperCase('o\'sullivan')).toBe('O\'Sullivan');
       });
     });
 
